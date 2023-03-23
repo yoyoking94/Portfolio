@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Yovish MOONESAMY</title>
+
+    <!-- Ico -->
+    <link rel="icon" type="image/png" href="https://yovish.space/YM.png" />
+
+    <!-- ========== Css ========== -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Crete+Round&family=Fira+Code:wght@300&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Fira Code', monospace;
+            color: white;
+
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: transparent !important;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: rgb(80, 27, 80);
+            border-radius: 10px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            /* cursor: url('./src/img/nasa.png'), auto; */
+        }
+
+        body {
+            display: flex;
+        }
+
+        .center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Nav */
+        .nav {
+            background-color: rgb(174, 133, 212);
+
+            height: 100vh;
+            width: 20%;
+            position: fixed;
+            flex-direction: column;
+        }
+
+        .navHeader {
+            padding-bottom: 100px;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .navHeader>* {
+            margin: 10px 0;
+        }
+
+        .navHeader>div:hover span {
+            color: red;
+        }
+
+        .nav img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .nav-links {
+            flex-direction: column;
+            align-items: flex-start !important;
+        }
+
+        .nav-links li {
+            list-style: none;
+            margin: 10px 0;
+        }
+
+        .nav-links>li::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: red;
+            transition: width .3s;
+        }
+
+        .nav-links>li:hover::after {
+            width: 100%;
+            transition: width .3s;
+        }
+
+        @keyframes navLinkFade {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0px);
+            }
+        }
+
+        .nav-links a {
+            text-decoration: none;
+        }
+
+        /* Main */
+        .main {
+            width: 80%;
+            position: absolute;
+            right: 0%;
+
+            background-color: rgb(121, 128, 230);
+        }
+
+        .section {
+            height: 100vh;
+            width: 100%;
+        }
+
+        #moi {
+            background-image: url('https://yovish.space/header-background.jpg');
+            flex-direction: column;
+            padding: 10%;
+            box-shadow: 0px 12px 50px 12px rgba(0, 0, 0, 0.6);
+        }
+
+        .moiText {
+            text-align: justify;
+        }
+
+        hr {
+            width: 80%;
+            margin: 30px 0;
+            opacity: .35;
+        }
+
+        .moiButton>ul {
+            list-style: none;
+        }
+
+        .moiButton>ul>li {
+            list-style: none;
+        }
+
+        .moiButton>ul>li>a>i {
+            border: 1px solid;
+            padding: 50px;
+            margin: 10px;
+            font-size: 25px;
+            box-shadow: white 4px 4px 0px;
+            transition: transform 100ms, box-shadow 100ms;
+        }
+
+        .moiButton>ul>li>a>i:active {
+            border: none;
+            transform: translateY(4px) translateX(4px);
+            box-shadow: #333 0px 0px 0px;
+        }
+
+        @media screen and (max-width: 480px) {
+            #moi {
+                height: auto;
+            }
+
+            .moiButton>ul {
+                flex-direction: column !important;
+            }
+        }
+
+
+        /* Experience */
+
+        #experience {
+            flex-direction: column;
+        }
+
+        .exp {
+            width: 100%;
+            height: auto;
+            margin: 1% 0;
+
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cardExp {
+            border: 1px solid white;
+            width: 450px;
+            height: auto;
+            padding: 2%;
+            margin: 1%;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cardExp h6 {
+            text-align: right;
+        }
+
+        .cardExp>div>* {
+            margin: 15px 0;
+        }
+
+        /* 320px — 480px: Mobile devices */
+        @media screen and (max-width: 480px) {
+            #experience {
+                height: auto;
+                padding: 2%;
+            }
+
+            .cardExp>div>div>ul>li {
+                margin-left: 40px;
+            }
+        }
+
+        /* 481px — 768px: iPads, Tablets */
+        @media screen and (max-width: 768px) {
+            #experience {
+                height: auto;
+                padding: 2%;
+            }
+
+            .cardExp>div>div>ul>li {
+                margin-left: 40px;
+            }
+        }
+
+        /* 769px — 1024px: Small screens, laptops */
+        @media screen and (max-width: 1024px) {
+            #experience {
+                height: auto;
+                padding: 2%;
+            }
+
+            .cardExp>div>div>ul>li {
+                margin-left: 40px;
+            }
+        }
+
+        /* 1025px — 1200px: Desktops, large screens */
+        @media screen and (max-width: 1200px) {
+            #experience {
+                height: auto;
+                padding: 2%;
+            }
+
+            .cardExp>div>div>ul>li {
+                margin-left: 40px;
+            }
+        }
+
+
+        /* 1201px and more —  Extra large screens, TV */
+        @media screen and (min-width: 1201px) {
+            .cardExp>div>div>ul>li {
+                margin-left: 40px;
+            }
+        }
+
+        /* Education */
+        #education {
+            flex-direction: column;
+        }
+
+        #education ul {
+            margin-left: 5%;
+        }
+
+        .container {
+            width: 100%;
+        }
+
+        .container>* {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 1% 0;
+        }
+
+        .btnShowContent1,
+        .btnShowContent2,
+        .btnShowContent3,
+        .btnShowContent4 {
+            border: 1px solid white;
+
+            width: 60%;
+            height: 80px;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .btnShowContent1>div,
+        .btnShowContent2>div,
+        .btnShowContent3>div,
+        .btnShowContent4>div {
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .btnShowContent1>div:nth-child(1),
+        .btnShowContent2>div:nth-child(1),
+        .btnShowContent3>div:nth-child(1),
+        .btnShowContent4>div:nth-child(1) {
+            width: 90%;
+            margin-left: 1%;
+        }
+
+        .btnShowContent1>div:nth-child(2),
+        .btnShowContent2>div:nth-child(2),
+        .btnShowContent3>div:nth-child(2),
+        .btnShowContent4>div:nth-child(2) {
+            width: 5%;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .hideContent1,
+        .hideContent2,
+        .hideContent3,
+        .hideContent4 {
+            border: 1px solid white;
+            margin: 0.5% 0;
+            padding: 2%;
+
+            width: 60%;
+            height: auto;
+        }
+
+        .hideContent1>div,
+        .hideContent2>div,
+        .hideContent3>div,
+        .hideContent4>div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hideContent1>div>div,
+        .hideContent2>div>div,
+        .hideContent3>div>div,
+        .hideContent4>div>div {
+            margin: 5px 0;
+        }
+
+        .toggle {
+            display: none;
+        }
+
+        .bg {
+            background-color: #333;
+            border: none;
+            transition: all .4s ease-in-out;
+        }
+
+        @media screen and (max-width: 1700px) {
+
+            .btnShowContent1,
+            .btnShowContent2,
+            .btnShowContent3,
+            .btnShowContent4 {
+                width: 80%;
+            }
+
+            .hideContent1,
+            .hideContent2,
+            .hideContent3,
+            .hideContent4 {
+                width: 80%;
+            }
+        }
+
+
+        @media screen and (max-width: 900px) {
+
+            .btnShowContent1,
+            .btnShowContent2,
+            .btnShowContent3,
+            .btnShowContent4 {
+                width: 95%;
+            }
+
+            .hideContent1,
+            .hideContent2,
+            .hideContent3,
+            .hideContent4 {
+                width: 95%;
+            }
+        }
+
+        /* Compétence */
+        #compétence {
+            flex-direction: column;
+        }
+
+
+        input[type=radio] {
+            display: none;
+        }
+
+
+        .cardSlider {
+            position: absolute;
+            width: 60%;
+            height: 100%;
+            left: 0;
+            right: 0;
+            margin: auto;
+            transition: transform 0.4s ease;
+            cursor: pointer;
+        }
+
+        .slider {
+            width: 100%;
+            max-width: 800px;
+            max-height: 600px;
+            height: 100%;
+            transform-style: preserve-3d;
+        }
+
+        #item-1:checked~.cards #card-5,
+        #item-2:checked~.cards #card-1,
+        #item-3:checked~.cards #card-2,
+        #item-4:checked~.cards #card-3,
+        #item-5:checked~.cards #card-4 {
+            transform: translatex(-70%) scale(0.8);
+            opacity: 0.4;
+            z-index: 0;
+        }
+
+        #item-1:checked~.cards #card-2,
+        #item-2:checked~.cards #card-3,
+        #item-3:checked~.cards #card-4,
+        #item-4:checked~.cards #card-5,
+        #item-5:checked~.cards #card-1 {
+            transform: translatex(70%) scale(0.8);
+            opacity: 0.4;
+            z-index: 0;
+        }
+
+        #item-1:checked~.cards #card-3,
+        #item-2:checked~.cards #card-4,
+        #item-3:checked~.cards #card-5,
+        #item-4:checked~.cards #card-1,
+        #item-5:checked~.cards #card-2 {
+            transform: translatey(-50%) scale(0.8);
+            opacity: 0.4;
+            z-index: 0;
+        }
+
+        #item-1:checked~.cards #card-4,
+        #item-2:checked~.cards #card-5,
+        #item-3:checked~.cards #card-1,
+        #item-4:checked~.cards #card-2,
+        #item-5:checked~.cards #card-3 {
+            transform: translatey(50%) scale(0.8);
+            opacity: 0.4;
+            z-index: 0;
+        }
+
+        #item-1:checked~.cards #card-1,
+        #item-2:checked~.cards #card-2,
+        #item-3:checked~.cards #card-3,
+        #item-4:checked~.cards #card-4,
+        #item-5:checked~.cards #card-5 {
+            transform: translatex(0) scale(1);
+            opacity: 1;
+            z-index: 1;
+        }
+
+
+        /* Card */
+        .card {
+            position: relative;
+            width: 400px;
+            height: 500px;
+            margin: 0 auto;
+            background: #333;
+            box-shadow: 0 15px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .card .face {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card .face.face1 {
+            box-sizing: border-box;
+            padding: 20px;
+        }
+
+        .card .face.face1 h2 {
+            margin: 0;
+            padding: 0;
+        }
+
+        .card .face.face1 .language {
+            background-color: white;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .card .face.face1 .logiciels {
+            background-color: white;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .card .face.face1 .bureautique {
+            background-color: white;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .card .face.face1 .lpo {
+            background-color: white;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .card .face.face1 .langues {
+            background-color: white;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .card .face.face2 {
+            transition: 0.5s;
+        }
+
+        .card .face.face2 h2 {
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            text-align: center;
+            z-index: 10;
+            transition: 0.5s;
+        }
+
+        .card:hover .face.face2 {
+            height: 60px;
+        }
+
+        .card:hover .face.face2 h2 {
+            font-size: 1em;
+        }
+
+        .card:nth-child(1) .face.face2 {
+            background-color: #b098c1;
+        }
+
+        .card:nth-child(2) .face.face2 {
+            background-color: #b098c1;
+        }
+
+        .card:nth-child(3) .face.face2 {
+            background-color: #b098c1;
+        }
+
+        .card:nth-child(4) .face.face2 {
+            background-color: #b098c1;
+        }
+
+        .card:nth-child(5) .face.face2 {
+            background-color: #b098c1;
+        }
+
+        .lText {
+            margin: 5% 0;
+        }
+
+        /* 320px — 480px: Mobile devices */
+        @media screen and (max-width: 620px) {
+
+            .cardSlider {
+                width: 100%;
+            }
+
+            #item-1:checked~.cards #card-5,
+            #item-2:checked~.cards #card-1,
+            #item-3:checked~.cards #card-2,
+            #item-4:checked~.cards #card-3,
+            #item-5:checked~.cards #card-4 {
+                transform: translatex(-40%) scale(0.5);
+                opacity: 0.4;
+                z-index: 0;
+            }
+
+            #item-1:checked~.cards #card-2,
+            #item-2:checked~.cards #card-3,
+            #item-3:checked~.cards #card-4,
+            #item-4:checked~.cards #card-5,
+            #item-5:checked~.cards #card-1 {
+                transform: translatex(40%) scale(0.5);
+                opacity: 0.4;
+                z-index: 0;
+            }
+
+            #item-1:checked~.cards #card-3,
+            #item-2:checked~.cards #card-4,
+            #item-3:checked~.cards #card-5,
+            #item-4:checked~.cards #card-1,
+            #item-5:checked~.cards #card-2 {
+                transform: translatey(-15%) scale(0.5);
+                opacity: 0.4;
+                z-index: 0;
+            }
+
+            #item-1:checked~.cards #card-4,
+            #item-2:checked~.cards #card-5,
+            #item-3:checked~.cards #card-1,
+            #item-4:checked~.cards #card-2,
+            #item-5:checked~.cards #card-3 {
+                transform: translatey(15%) scale(0.5);
+                opacity: 0.4;
+                z-index: 0;
+            }
+
+            #item-1:checked~.cards #card-1,
+            #item-2:checked~.cards #card-2,
+            #item-3:checked~.cards #card-3,
+            #item-4:checked~.cards #card-4,
+            #item-5:checked~.cards #card-5 {
+                transform: translatex(0) scale(.5);
+                opacity: 1;
+                z-index: 1;
+            }
+        }
+
+        /* 481px — 768px: iPads, Tablets */
+        @media screen and (max-width: 768px) {
+            .slider {
+                transform: scale(0.5);
+            }
+        }
+
+        /* 769px — 1024px: Small screens, laptops */
+        @media screen and (max-width: 1024px) {
+            .slider {
+                transform: scale(0.6);
+            }
+        }
+
+        /* 1025px — 1200px: Desktops, large screens */
+        @media screen and (max-width: 1200px) {
+            .slider {
+                transform: scale(0.7);
+            }
+        }
+
+
+        /* 1201px and more —  Extra large screens, TV */
+        @media screen and (min-width: 1201px) {
+            .slider {
+                transform: scale(0.8);
+            }
+        }
+
+        /* Divers */
+        #divers {
+            flex-direction: column;
+        }
+
+
+        /* Contact */
+        #contact {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        input {
+            width: 200px;
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid white !important;
+        }
+
+        input::placeholder {
+            color: rgb(201, 200, 200);
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        textarea {
+            width: 70%;
+            background-color: transparent;
+            border: 1px solid white;
+        }
+
+        textarea:focus {
+            outline: none;
+        }
+
+        .btnForm>button {
+            width: 100px;
+            height: 50px;
+            border: 1px solid white;
+            background-color: transparent;
+            margin: 1% 1%;
+
+            box-shadow: white 4px 4px 0px;
+            transition: transform 100ms, box-shadow 100ms;
+        }
+
+        .btnForm>button:active {
+            border: none;
+            transform: translateY(4px) translateX(4px);
+            box-shadow: #333 0px 0px 0px;
+        }
+
+        .popup {
+            position: absolute;
+            bottom: 20vh;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            height: 50px;
+            width: 300px;
+            color: green;
+            font-size: 20px;
+            font-weight: bold;
+            border: 1px solid green;
+            border-radius: 50px;
+        }
+
+        /* Mouse wheel */
+
+        .mouse {
+            cursor: pointer;
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            width: 25px;
+            height: 50px;
+            border: 2px solid #fff;
+            border-radius: 20px;
+            display: none;
+        }
+
+        .mouseWheel {
+            display: block;
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            border-radius: 50%;
+            margin: auto;
+            animation: moveWheel 1s linear infinite;
+        }
+
+        @keyframes moveWheel {
+            0% {
+                opacity: 0;
+                transform: translateY(1rem);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(-.5rem);
+            }
+        }
+
+        @media screen and (max-width: 1150px) {
+            body {
+                flex-direction: column !important;
+            }
+
+            .nav {
+                width: 100%;
+                height: 60px;
+                position: sticky !important;
+                top: 0;
+                z-index: 1;
+            }
+
+            .main {
+                width: 100%;
+                position: static;
+            }
+
+            .nav>div:nth-child(1),
+            .nav>div:nth-child(2) {
+                display: none;
+            }
+
+            .nav-links {
+                align-items: center !important;
+            }
+
+            /* Button nav */
+
+            .navMenu>span {
+                display: block;
+                width: 28px;
+                height: 2px;
+                border-radius: 9999px;
+                background-color: white;
+            }
+
+            .navMenu>span:not(:last-child) {
+                margin-bottom: 7px;
+            }
+
+            .navMenu,
+            .navMenu>span {
+                transition: all .4s ease-in-out;
+            }
+
+            .navMenu.active {
+                transition-delay: 0.8s;
+                transform: rotate(45deg);
+            }
+
+            .navMenu.active>span:nth-child(2) {
+                width: 0;
+            }
+
+            .navMenu.active>span:nth-child(1),
+            .navMenu.active>span:nth-child(3) {
+                transition-delay: .4s;
+            }
+
+            .navMenu.active>span:nth-child(1) {
+                transform: translateY(9px);
+            }
+
+            .navMenu.active>span:nth-child(3) {
+                transform: translateY(-9px) rotate(90deg);
+            }
+        }
+    </style>
+
+    <!-- ========== Font Awesome ========== -->
+    <script src="https://kit.fontawesome.com/ff34abd670.js" crossorigin="anonymous" defer></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- ========== TextWritter ========== -->
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+
+    <!-- Mail JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+
+<body>
+    <div class="nav center">
+        <div class="navHeader center">
+            <img src="https://yovish.space/ld.jpg" alt="me">
+            <div><span>&lt;/</span>Yovish.Dev<span>&gt;</span></div>
+        </div>
+        <div id="links">
+            <ul class="nav-links center">
+                <li><a href="#moi">Sur-moi</a></li>
+                <li><a href="#experience">Expérience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#compétence">Compétences</a></li>
+                <li><a href="#divers">Divers</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div id="navMenu" class="navMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="main">
+        <div id="moi" class="section center">
+            <div style="margin-bottom: 50px">
+                <h1></h1>
+            </div>
+            <div class="moiText">Un apprenti développeur web à Cloud Campus suivant la formation de développeur Full
+                Stack (titre RNCP
+                de niveau VI bac+3/4). Intéresser dans la conception d'application web et de logiciel, je voudrais me
+                former et améliorer mes connaissances dans le codage.</div>
+            <hr />
+            <div class="moiButton">
+                <ul class="center">
+                    <li class="center">
+                        <a href="mailto: yovish.moonesamy@gmail.com" target="_blank" role="button"><i
+                                class="fab fa-google"></i></a>
+                    </li>
+                    <li class="center">
+                        <a href="https://fr.linkedin.com/in/yovish-moonesamy-53247b183" target="_blank" role="button"><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </li>
+                    <li class="center">
+                        <a href="https://github.com/yoyoking94" target="_blank" role="button"><i
+                                class="fab fa-github"></i></a>
+                    </li>
+                    <li class="center">
+                        <a href="./CV_Yovish_MOONESAMY.pdf" target="_blank" type='application/pdf' role="button"><i
+                                class="fa-solid fa-download"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="experience" class="section center">
+            <div>
+                <h1>Expèriences</h1>
+            </div>
+                <div class="exp center">
+                    <div class="cardExp">
+                        <div>
+                            <div>
+                                <h6>Février 2022 - Décembre 2022</h6>
+                            </div>
+                            <div>
+                                <h1>Développeur web - Apprentie chez Elyotech</h1>
+                            </div>
+                            <div><b>Objectif : </b>Création d'une application mobile en React (TypeScript / Node.js)
+                                ainsi qu'une
+                                application web (Dashboard) en React (JavaScript / Node.js).</div>
+                            <div>
+                                <ul>
+                                    <h4>Application mobile :</h4>
+                                    <li>Création de la navigation (Front-end)</li>
+                                    <li>Ajustement des pages préexistants (Front-end)</li>
+                                    <li>Création des pages liée à la modification du profile del'utilisateur (Front-end)
+                                    </li>
+                                    <li> Modification de la base de donnée Firebase (Back-end)</li>
+                                    <li>Création d'un système de traduction français / anglais pour les champs dynamique
+                                        (Back-end)</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <ul>
+                                    <h4>Application web : </h4>
+                                    <li>Création du système de navigation avec React-router-dom (Front-end)</li>
+                                    <li>Création de composants génériques (Cards / Table / Form) (Front-end)</li>
+                                    <li>Gestion des données avec l'utilisation des props (Back-end)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cardExp">
+                        <div>
+                            <div>
+                                <h6>2019 - 2021</h6>
+                            </div>
+                            <div>
+                                <h1>Développeur web – Apprentie chez CIRCEO</h1>
+                            </div>
+                            <div><b>Objectif : </b>Venir en support aux développeurs afin de réaliser les projets.</div>
+                            <div>
+                                <ul>
+                                    <li>Conception de parcours de souscription en fonction du cahier des charges du
+                                        client</li>
+                                    <li>Créations et habillages des différentes fonctions HTML</li>
+                                    <li>Recettage des produits avant la livraison aux clients principalement des acteurs
+                                        financiers (BNP Paribas, Société Générale, Renault, Fiat)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cardExp">
+                        <div>
+                            <div>
+                                <h6>Février 2022</h6>
+                            </div>
+                            <div>
+                                <h1>Développeur web – Stage chez Sodifrance / Netapsys</h1>
+                            </div>
+                            <div><b>Objectif : </b>Exploration des différents types de développement (IOS – Android –
+                                Web) ainsi que
+                                des différents corps de métiers dans l’univers du développement web.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="education" class="section center">
+                <div>
+                    <h1>
+                        Educations
+                    </h1>
+                </div>
+                <div class="container">
+                    <div class="cloudCampus">
+                        <div class="btnShowContent1">
+                            <div>Preparation BAC +4 Full Stack Développeur</div>
+                            <div id="plus1">+</div>
+                        </div>
+                        <div class="hideContent1 toggle">
+                            <div>
+                                <div><a href="https://cloud-campus.fr/">Cloud-Campus</a> - Paris (11)</div>
+                                <div>
+                                    <ul>
+                                        <li>Développement front-end : Les fondamentaux</li>
+                                        <li>Développement front-end : Le framework React</li>
+                                        <li>Développement back-end : Apache, PHP & MySQL</li>
+                                        <li>Architectures micro-service : Node.js & MongoDB</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bts">
+                        <div class="btnShowContent2">
+                            <div>BTS Système informatique aux organisation</div>
+                            <div id="plus2">+</div>
+                        </div>
+                        <div class="hideContent2 toggle">
+                            <div>
+                                <div>CFA UTEC - Emerainville (77)</div>
+                                <div>
+                                    <ul>
+                                        <li>En alternance chez CIRCEO</li>
+                                        <li>HTML / CSS / PHP : réalisation de site web avec un système de prise de
+                                            données
+                                            et
+                                            d’enregistrement dans une base de données MySQL</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dut">
+                        <div class="btnShowContent3">
+                            <div>DUT Informatique</div>
+                            <div id="plus3">+</div>
+                        </div>
+                        <div class="hideContent3 toggle">
+                            <div>
+                                <div>IUT de Valenciennes – Maubeuge (59)</div>
+                                <div>
+                                    <ul>
+                                        <li>HTML / CSS : création de page vitrine pour des clients fictifs</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="compétence" class="section center">
+                <div>
+                    <h1>
+                        Compétences
+                    </h1>
+                </div>
+                <div class="slider center">
+                    <input type="radio" name="slider" id="item-1" checked>
+                    <input type="radio" name="slider" id="item-2">
+                    <input type="radio" name="slider" id="item-3">
+                    <input type="radio" name="slider" id="item-4">
+                    <input type="radio" name="slider" id="item-5">
+                    <div class="cards center">
+                        <label class="cardSlider" for="item-1" id="card-1">
+                            <div class="card">
+                                <div class="face face1">
+                                    <div class="content">
+                                        <span class="stars">Les languages de développement web dont je maitrise aisément
+                                            :
+                                        </span>
+                                        <p class="language">
+                                            <li class="lText">HTML5 :
+                                                <i class="fa-solid fa-circle"></i>
+                                                <i class="fa-solid fa-circle"></i>
+                                                <i class="fa-solid fa-circle"></i>
+                                                <i class="fa-solid fa-circle"></i>
+                                                <i class="fa-solid fa-circle"></i>
+                                                <i class="fa-regular fa-circle"></i>
+                                            </li>
+                                            <li class="lText">CSS3 :
+                                                <i class="fa-solid fa-circle"></i>
+                                                <i class="fa-solid fa-circle"></i>
+                                                <i class="fa-solid fa-circle"></i>
+                                                <i class="fa-solid fa-circle"></i>
+                                                <i class="fa-regular fa-circle"></i>
+                                                <i class="fa-regular fa-circle"></i>
+                                            </li>
+                                            <li class="lText">Js :
+                                                <i class="fa-solid fa-circle"></i>
+                                                <i class="fa-solid fa-circle"></i>
+                                                <i class="fa-solid fa-circle"></i>
+                                                <i class="fa-regular fa-circle"></i>
+                                                <i class="fa-regular fa-circle"></i>
+                                                <i class="fa-regular fa-circle"></i>
+                                            </li>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="face face2">
+                                    <h2>Langages de développement web</h2>
+                                </div>
+                            </div>
+                        </label>
+                        <label class="cardSlider" for="item-2" id="card-2">
+                            <div class="card">
+                                <div class="face face1">
+                                    <div class="content">
+                                        <span class="stars">Les différentes logiciels de développement vue : </span>
+                                        <p class="logiciels">
+                                            <li class="lText">Visual Studio Code, Sublime Text :
+                                                <i class="fa-solid fa-circle"></i>
+                                                <i class="fa-solid fa-circle"></i>
+                                                <i class="fa-solid fa-circle"></i>
+                                                <i class="fa-solid fa-circle"></i>
+                                                <i class="fa-regular fa-circle"></i>
+                                                <i class="fa-regular fa-circle"></i>
+                                            </li>
+                                            <li class="lText">
+                                                IDLE , Intellij , PgAdmin , Code::Blocks :
+                                                <i class="fa-solid fa-circle"></i>
+                                                <i class="fa-solid fa-circle"></i>
+                                                <i class="fa-regular fa-circle"></i>
+                                                <i class="fa-regular fa-circle"></i>
+                                                <i class="fa-regular fa-circle"></i>
+                                                <i class="fa-regular fa-circle"></i>
+                                            </li>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="face face2">
+                                    <h2>Logiciels</h2>
+                                </div>
+                            </div>
+                        </label>
+                        <label class="cardSlider" for="item-3" id="card-3">
+                            <div class="card">
+                                <div class="face face1">
+                                    <div class="content">
+                                        <span class="stars">Tous les languages de programmation vue : </span>
+                                        <p class="lpo">
+                                            <li class="lText">MySQL :
+                                                <i class="fa-solid fa-circle"></i>
+                                                <i class="fa-solid fa-circle"></i>
+                                                <i class="fa-solid fa-circle"></i>
+                                                <i class="fa-solid fa-circle"></i>
+                                                <i class="fa-solid fa-circle"></i>
+                                                <i class="fa-regular fa-circle"></i>
+                                            </li>
+                                            <li class="lText">PHP, Wordpress, Joomla :
+                                                <i class="fa-solid fa-circle"></i>
+                                                <i class="fa-solid fa-circle"></i>
+                                                <i class="fa-solid fa-circle"></i>
+                                                <i class="fa-regular fa-circle"></i>
+                                                <i class="fa-regular fa-circle"></i>
+                                                <i class="fa-regular fa-circle"></i>
+                                            </li>
+                                            <li class="lText">Vue.Js, Node.Js, Scss, React.js (Ionic/Tsx/Js) :
+                                                <i class="fa-solid fa-circle"></i>
+                                                <i class="fa-solid fa-circle"></i>
+                                                <i class="fa-regular fa-circle"></i>
+                                                <i class="fa-regular fa-circle"></i>
+                                                <i class="fa-regular fa-circle"></i>
+                                                <i class="fa-regular fa-circle"></i> (en apprentissage)
+                                            </li>
+                                            <li class="lText">
+                                                C (apprentissage) , Python , Java :
+                                                <i class="fa-solid fa-circle"></i>
+                                                <i class="fa-solid fa-circle"></i>
+                                                <i class="fa-regular fa-circle"></i>
+                                                <i class="fa-regular fa-circle"></i>
+                                                <i class="fa-regular fa-circle"></i>
+                                                <i class="fa-regular fa-circle"></i>
+                                            </li>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="face face2">
+                                    <h2>Langages de programmation utilisés</h2>
+                                </div>
+                            </div>
+                        </label>
+                        <label class="cardSlider" for="item-4" id="card-4">
+                            <div class="card">
+                                <div class="face face1">
+                                    <div class="content">
+                                        <span class="stars">Les différentes système d'exploitation manipulé : </span>
+                                        <p class="OS">
+                                            <li class="lText">
+                                                Windows :
+                                                <i class="fa-solid fa-circle"></i>
+                                                <i class="fa-solid fa-circle"></i>
+                                                <i class="fa-solid fa-circle"></i>
+                                                <i class="fa-solid fa-circle"></i>
+                                                <i class="fa-regular fa-circle"></i>
+                                                <i class="fa-regular fa-circle"></i>
+                                            </li>
+                                            <li class="lText">
+                                                Linux :
+                                                <i class="fa-solid fa-circle"></i>
+                                                <i class="fa-solid fa-circle"></i>
+                                                <i class="fa-solid fa-circle"></i>
+                                                <i class="fa-regular fa-circle"></i>
+                                                <i class="fa-regular fa-circle"></i>
+                                                <i class="fa-regular fa-circle"></i>
+                                            </li>
+                                            <li class="lText">
+                                                MacOs :
+                                                <i class="fa-solid fa-circle"></i>
+                                                <i class="fa-solid fa-circle"></i>
+                                                <i class="fa-regular fa-circle"></i>
+                                                <i class="fa-regular fa-circle"></i>
+                                                <i class="fa-regular fa-circle"></i>
+                                                <i class="fa-regular fa-circle"></i>
+                                            </li>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="face face2">
+                                    <h2>Système d’exploitation</h2>
+                                </div>
+                            </div>
+                        </label>
+                        <label class="cardSlider" for="item-5" id="card-5">
+                            <div class="card">
+                                <div class="face face1">
+                                    <div class="content">
+                                        <span class="stars">Les différentes langues dont je parle : </span>
+                                        <p class="langues">
+                                            <li class="lText">
+                                                Anglais : C1
+                                            </li>
+                                            <li class="lText">
+                                                Espagnol : A1
+                                            </li>
+                                            <li class="lText">
+                                                Créole mauricien : C2
+                                            </li>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="face face2">
+                                    <h2>Langues</h2>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div id="divers" class="section center">
+                <div>
+                    <h1>Divers</h1>
+                </div>
+                <div class="exp center">
+                    <div class="cardExp">
+                        <div>
+                            <div>
+                                <h1>Centre d'intéret: </h1>
+                            </div>
+                            <div>J'aime créer des sites internet ainsi que des logiciels à mes heures perdues, regarder
+                                tout
+                                types
+                                d'oeuvres cinématographiques, écoute de la musique et jouer aux jeux vidéo.</div>
+                        </div>
+                    </div>
+                    <div class="cardExp">
+                        <div>
+                            <div>
+                                <h1>Sports : </h1>
+                            </div>
+                            <div>Pratique en club du football (4 ans) et du karaté (3 ans / ceinture noire)<br>
+                                Pratique en amateur : Basket-ball et badminton.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="contact" class="section center">
+                <div>
+                    <h1>Contact</h1>
+                </div>
+                <form id="contact-form" method="post">
+                    <div class="field">
+                        <label for="fName">Bonjour, je me pré-nome : </label>
+                        <input type="text" name="fName" id="fName" placeholder="Prénom" required />
+                        <input type="text" name="lName" id="lName" placeholder="Nom de famille" required />
+                        <label for="entreprise">et je suis employé chez :</label>
+                        <input type="text" name="entreprise" id="entreprise" /><span>.</span>
+                    </div>
+                    <div class="field">
+                        <label for="mail">Je suis joignable via @mail : </label>
+                        <input type="mail" name="mail" id="mail" style="width: 300px;" required />
+                        <label for="phone">ainsi que par téléphone au :</label>
+                        <input type="tel" name="phone" id="phone" /><span>.</span>
+                    </div>
+                    <div class="field">
+                        <label for="subject">je me permets de vous contacter au sujet de :</label>
+                        <input type="text" name="subject" id="subject" required />
+                    </div>
+                    <div class="center field" style="flex-direction: column;">
+                        <label for="message">Laissez-moi détailler un peu plus :</label>
+                        <textarea type="text" name="message" id="message" rows="20" required></textarea>
+                    </div>
+                    <div class="btnForm">
+                        <button type="reset">Effacer</button>
+                        <button type="submit">Envoyer</button>
+                    </div>
+                </form>
+                <div class="center" id="popup"></div>
+            </div>
+            <!-- Back on Top -->
+            <span onclick="backToTop()" class="mouse">
+                <span class="mouseWheel"></span>
+            </span>
+        </div>
+</body>
+
+<!-- ========== App.js ========== -->
+<script>
+    /* ========== animation Title ========== */
+    const txtAnim = document.querySelector('h1');
+    new Typewriter(txtAnim, {
+        loop: true,
+        deleteSpeed: 20,
+    })
+        .typeString('Je suis ')
+        .pauseFor(500)
+        .typeString('Yovish MOONESAMY !')
+        .pauseFor(500)
+        .deleteChars(21)
+        .start()
+
+    /* ========== Nav ========== */
+    const nav = () => {
+        const nav = document.querySelector('.nav')
+        const navMenu = document.querySelector('#navMenu')
+        const links = document.querySelector('#links')
+        const body = document.querySelector('body')
+
+        navMenu.addEventListener("click", () => {
+            navMenu.classList.toggle("active")
+
+            if (navMenu.classList.contains("active")) {
+                nav.style.height = 100 + 'vh'
+                nav.style.transition = 'height .4s ease-in-out'
+                nav.style.position = 'absolute'
+                nav.style.zIndex = 1
+                links.style.display = "block"
+                navMenu.style.marginTop = 50 + 'px'
+            } else {
+                nav.style.height = 60 + 'px'
+                nav.style.transition = ''
+                nav.style.position = ''
+                links.style.display = "none"
+                navMenu.style.marginTop = 0 + 'px'
+                window.addEventListener("resize", () => {
+                    var w = document.documentElement.clientWidth;
+                    if (w > 1150) {
+                        nav.style.height = 100 + 'vh'
+                        links.style.display = "block"
+                    }
+                });
+            }
+        })
+    }
+    nav();
+
+    /* ========== education ========== */
+    const education = () => {
+        const plus1 = document.getElementById('plus1')
+        const plus2 = document.getElementById('plus2')
+        const plus3 = document.getElementById('plus3')
+
+        const hideContent1 = document.querySelector('.hideContent1')
+        const hideContent2 = document.querySelector('.hideContent2')
+        const hideContent3 = document.querySelector('.hideContent3')
+
+        const btnShowContent1 = document.querySelector('.btnShowContent1')
+        const btnShowContent2 = document.querySelector('.btnShowContent2')
+        const btnShowContent3 = document.querySelector('.btnShowContent3')
+
+        plus1.addEventListener("click", () => {
+            hideContent1.classList.toggle("toggle")
+            btnShowContent1.classList.toggle("bg")
+
+            if (plus1.textContent === "+") {
+                plus1.textContent = "-"
+            } else {
+                plus1.textContent = "+"
+            }
+
+        })
+
+        plus2.addEventListener("click", () => {
+            hideContent2.classList.toggle("toggle")
+            btnShowContent2.classList.toggle("bg")
+
+            if (plus2.textContent === "+") {
+                plus2.textContent = "-"
+            } else {
+                plus2.textContent = "+"
+            }
+        })
+
+        plus3.addEventListener("click", () => {
+            hideContent3.classList.toggle("toggle")
+            btnShowContent3.classList.toggle("bg")
+
+            if (plus3.textContent === "+") {
+                plus3.textContent = "-"
+            } else {
+                plus3.textContent = "+"
+            }
+        })
+    }
+    education()
+
+    /* ========== Btn back on top ========== */
+    const backToTop = () => {
+        const mouse = document.querySelector('.mouse')
+        window.addEventListener("scroll", (event) => {
+            let scrollY = this.scrollY;
+            if (scrollY >= 150) {
+                mouse.style.display = "flex"
+            } else {
+                mouse.style.display = "none"
+            }
+        });
+
+        mouse.addEventListener("click", () => {
+            document.location.href = "#top";
+        })
+    }
+    backToTop()
+
+
+    /* ========== Mail Js ========== */
+    const mailJs = () => {
+        emailjs.init('3RI_-9NAXCCYwvEq1')
+
+        document.getElementById('contact-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+
+            const serviceID = 'default_service';
+            const templateID = 'template_qyjwgnm';
+
+            emailjs.sendForm(serviceID, templateID, this)
+                .then(() => {
+
+                    setTimeout(() => {
+                        document.getElementById('popup').classList.add('popup')
+                        document.getElementById('popup').innerText = '@mail sended'
+                    });
+
+                    setTimeout(() => {
+                        document.getElementById('popup').classList.remove('popup')
+                        document.getElementById('popup').innerText = ''
+                    }, 2000);
+
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 2000);
+                }, (err) => {
+                    alert(JSON.stringify(err));
+                });
+        });
+    }
+    mailJs()
+
+</script>
+
+</html>
