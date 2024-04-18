@@ -1,0 +1,200 @@
+/* ==== Start contact ==== */
+.contact {
+  background-image: url("../images/space2.svg") !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-clip: content-box;
+}
+
+.contact > div {
+  width: 70vw;
+}
+
+.contact > div:nth-child(2) {
+  margin: 30px 0;
+}
+
+.background {
+  display: flex;
+}
+
+.background-container {
+  flex: 0 1 700px;
+  margin: auto;
+  padding: 10px;
+}
+
+.screen {
+  position: relative;
+  background: #1e385c;
+}
+
+.screen:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  right: 20px;
+  bottom: 0;
+
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
+
+.screen-header {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background: #0d1727;
+}
+
+.screen-header-left {
+  margin-right: auto;
+}
+
+.screen-header-button {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 3px;
+  border-radius: 8px;
+  background: white;
+}
+
+.screen-header-button.close {
+  background: #ed1c6f;
+}
+
+.screen-header-button.maximize {
+  background: #e8e925;
+}
+
+.screen-header-button.minimize {
+  background: #74c54f;
+}
+
+.screen-header-right {
+  display: flex;
+}
+
+.screen-header-ellipsis {
+  width: 3px;
+  height: 3px;
+  margin-left: 2px;
+  border-radius: 8px;
+  background: #999;
+}
+
+.screen-body {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.screen-body-item {
+  width: 100%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin: 50px 0 0 0;
+}
+
+input,
+textarea {
+  width: 70%;
+  padding: 10px 0;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #666;
+  color: #ddd;
+  font-size: 14px;
+  text-transform: uppercase;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.app-form-group {
+  width: 100%;
+  padding-right: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+  align-items: center;
+}
+
+.app-form-group.buttons {
+  margin-top: 25px;
+  margin-bottom: 50px;
+}
+.app-form-button {
+  font-size: 14px;
+  width: 100px;
+  height: 25px;
+  margin: 15px 2px 0 2px;
+  background: transparent;
+  outline: none;
+  border: 1px solid white;
+  color: #fff;
+  cursor: none;
+}
+
+/* Largest devices such as desktops (1280px and down) */
+@media only screen and (max-width: 80em) {
+  .contact > div {
+    width: 75%;
+  }
+}
+
+/* Large devices such as laptops (1024px and down) */
+@media only screen and (max-width: 64em) {
+  .contact {
+    height: 800px;
+    padding: 0 0;
+  }
+
+  .contact > div {
+    width: 80%;
+  }
+}
+/* Medium devices such as tablets (768px and down) */
+@media only screen and (max-width: 48em) {
+  .contact > div {
+    width: 85%;
+  }
+
+  input,
+  textarea {
+    width: 80%;
+  }
+}
+/* Small devices such as large phones (640px and down) */
+@media only screen and (max-width: 40em) {
+  .contact > div {
+    width: 90%;
+  }
+
+  input,
+  textarea {
+    width: 90%;
+  }
+
+  .app-form-group {
+    justify-content: center;
+    padding-right: 0;
+  }
+}
+
+/* Small devices such as small phones (368px and down) */
+@media only screen and (max-width: 23em) {
+  .contact > div {
+    width: 95%;
+  }
+}

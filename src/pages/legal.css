@@ -1,0 +1,270 @@
+@import url("https://fonts.googleapis.com/css2?family=Crete+Round&family=Fira+Code:wght@300&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Fira Code", monospace;
+  cursor: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+  width: 5px;
+}
+
+html::-webkit-scrollbar-track {
+  background: #7980e6;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #666;
+  border-radius: 50px;
+  margin-right: 10px;
+}
+
+/* cursor */
+.cursorDot {
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+}
+
+.cursorOutline {
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+}
+
+.cursorDot,
+.cursorOutline {
+  mix-blend-mode: difference;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 2;
+  pointer-events: none;
+  transition: width 0.3s, height 0.3s ease-in-out;
+}
+
+/* cursor */
+body {
+  background-color: #0b1215;
+  color: #ffffff;
+}
+
+/* ==== Start navigation bar ==== */
+nav {
+  background-color: #0b1215;
+  height: 100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+nav > img {
+  height: 100px;
+  transition: all 1s ease-in-out;
+}
+
+nav > ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav > ul > li {
+  list-style: none;
+  margin: 5px 0;
+}
+
+nav > ul > li > a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin: 0 15px;
+}
+
+nav > ul > li > a.active {
+  border-bottom: 2px solid #fff;
+}
+
+.navMobile {
+  height: 100% !important;
+  margin: 20px 0;
+  align-items: flex-start;
+}
+
+/* ==== End navigation bar ==== */
+
+section {
+  padding: 5%;
+}
+
+h1 {
+  text-align: center;
+  padding-bottom: 5%;
+}
+
+article {
+  padding: 1%;
+}
+
+h2 {
+  text-indent: 5%;
+  padding: 1%;
+}
+
+p {
+  text-align: justify;
+}
+
+footer {
+  background-color: #0b1215;
+  width: 100%;
+  padding: 15px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer > * {
+  margin: 10px 0;
+}
+
+a {
+  color: inherit;
+}
+
+/* ==== Start progress button to top ==== */
+.progress-wrap {
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  height: 46px;
+  width: 46px;
+  cursor: pointer;
+  display: block;
+  border-radius: 50px;
+  box-shadow: inset 0 0 0 2px #0b1215;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+
+.progress-wrap.active-progress {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.progress-wrap::after {
+  position: absolute;
+  font-family: "unicons";
+  content: "\e84b";
+  text-align: center;
+  line-height: 46px;
+  font-size: 24px;
+  color: #fff;
+  left: 0;
+  top: 0;
+  height: 46px;
+  width: 46px;
+  cursor: pointer;
+  display: block;
+  z-index: 1;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+
+.progress-wrap:hover::after {
+  opacity: 0;
+}
+
+.progress-wrap::before {
+  position: absolute;
+  font-family: "unicons";
+  content: "\e84b";
+  text-align: center;
+  line-height: 46px;
+  font-size: 24px;
+  opacity: 0;
+  background-color: #0b1215;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  left: 0;
+  top: 0;
+  height: 46px;
+  width: 46px;
+  cursor: pointer;
+  display: block;
+  z-index: 2;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+
+.progress-wrap:hover::before {
+  opacity: 1;
+}
+
+.progress-wrap svg path {
+  fill: none;
+}
+
+.progress-wrap svg.progress-circle path {
+  stroke: #ecedf3;
+  stroke-width: 4;
+  box-sizing: border-box;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+
+/* ==== End progress button to top ==== */
+
+/* ======== Responsive ======== */
+@media screen and (min-width: 320px) and (max-width: 480px) /* 320px — 480px : les mobiles */ {
+  article {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) /* 481px — 768px : iPads,
+  tablettes */ {
+  article {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) /* 769px — 1024px : petits écrans,
+  ordinateurs portables */ {
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1200px) /* 1025px — 1200px : ordinateurs de bureau,
+  écrans larges */ {
+}
+
+@media screen and (max-width: 1201px) /* 1201px et plus — écrans extra larges,
+  TV */ {
+  main {
+    position: static;
+    width: 100%;
+  }
+
+  section {
+    margin-top: 60px;
+  }
+}

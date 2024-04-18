@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Fira Code", monospace;
+  cursor: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ==== Custom scroll bar ==== */
+html::-webkit-scrollbar {
+  width: 5px;
+}
+
+html::-webkit-scrollbar-track {
+  background: #0b1215;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #ffffff;
+  border-radius: 50px;
+  margin-right: 20px;
+}
+
+body {
+  background-color: #0b1215;
+  color: #ffffff;
+}
+
+/* ==== Custom Cursor ==== */
+.cursorDot {
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+}
+
+.cursorOutline {
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+}
+
+.cursorDot,
+.cursorOutline {
+  mix-blend-mode: difference;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 2;
+  pointer-events: none;
+  transition: width 0.3s, height 0.3s ease-in-out;
+}
+
+/* ==== Display flex ==== */
+.dFlex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+
+  margin-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+section h2 {
+  text-transform: uppercase;
+}
+
+section > div:nth-child(1) {
+  width: auto;
+}
+
+.titleRect {
+  border: 1px solid white;
+  padding: 5px 0;
+  width: 100%;
+}
+
+footer {
+  height: 6rem;
+  background-color: #0b1215;
+  width: 100%;
+  padding: 15px 10px;
+  text-align: center;
+}
+
+footer > * {
+  margin: 10px 0;
+}
+
+footer a {
+  color: inherit;
+  cursor: none;
+}
+
+/* Largest devices such as desktops (1280px and down) */
+@media only screen and (max-width: 80em) {
+}
+/* Large devices such as laptops (1024px and down) */
+@media only screen and (max-width: 64em) {
+}
+/* Medium devices such as tablets (768px and down) */
+@media only screen and (max-width: 48em) {
+  section {
+    height: 100%;
+    padding: 100px 0;
+  }
+}
+/* Small devices such as large phones (640px and down) */
+@media only screen and (max-width: 40em) {
+}
+
+/* Small devices such as small phones (368px and down) */
+@media only screen and (max-width: 23em) {
+}

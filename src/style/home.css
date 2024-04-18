@@ -1,0 +1,190 @@
+header {
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url("../images/space.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-clip: content-box;
+}
+
+.rect {
+  border: 1px solid #fff;
+  padding: 5px 6vw;
+  margin: 10px 0;
+}
+
+.dFlex > span > b {
+  text-transform: uppercase;
+}
+
+.headline {
+  text-shadow: 0px 0px 5px #fff;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: clamp(2rem, 2.5vw, 4rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+hr {
+  margin: 50px;
+  width: 40vw;
+  height: 1px;
+}
+
+.socialBtn {
+  flex-wrap: wrap;
+}
+
+.socialBtn > button {
+  width: 150px;
+  height: 150px;
+
+  color: white;
+  font-size: 25px;
+  margin: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: transparent;
+  border: 1px solid white;
+  box-shadow: white 4px 4px 0px;
+  transition: transform 100ms, box-shadow 100ms;
+}
+
+.socialBtn > *:active {
+  border: none;
+  transform: translateY(4px) translateX(4px);
+  box-shadow: #0b1215 0px 0px 0px;
+}
+
+.scroll {
+  position: absolute;
+  top: 90%;
+  text-align: center;
+}
+
+.scrolldown {
+  --color: white;
+  --sizeX: 30px;
+  --sizeY: 50px;
+  position: relative;
+  width: 30px;
+  height: 50px;
+  margin-left: var(30px / 2);
+  border: calc(30px / 10) solid white;
+  border-radius: 50px;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+}
+
+.scrolldown::before {
+  content: "";
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  margin-left: -3px;
+  background-color: white;
+  border-radius: 100%;
+  animation: scrolldown-anim 2s infinite;
+  box-sizing: border-box;
+  box-shadow: 0px -5px 3px 1px #ffffff66;
+}
+
+@keyframes scrolldown-anim {
+  0% {
+    opacity: 0;
+    height: 6px;
+  }
+
+  40% {
+    opacity: 1;
+    height: 10px;
+  }
+
+  80% {
+    transform: translate(0, 20px);
+    height: 10px;
+    opacity: 0;
+  }
+
+  100% {
+    height: 3px;
+    opacity: 0;
+  }
+}
+
+.chevrons {
+  padding: 6px 0 0 0;
+  margin-left: -3px;
+  margin-top: 48px;
+  width: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chevrondown {
+  margin-top: -6px;
+  position: relative;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+}
+
+.chevrondown:nth-child(odd) {
+  animation: pulse 500ms ease infinite alternate;
+}
+
+.chevrondown:nth-child(even) {
+  animation: pulse 500ms ease infinite alternate 250ms;
+}
+
+@keyframes pulse {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 0.5;
+  }
+}
+/* Largest devices such as desktops (1280px and down) */
+@media only screen and (max-width: 80em) {
+}
+
+/* Large devices such as laptops (1024px and down) */
+@media only screen and (max-width: 64em) {
+}
+/* Medium devices such as tablets (768px and down) */
+@media only screen and (max-width: 48em) {
+  .home {
+    height: 800px;
+  }
+}
+
+/* Small devices such as large phones (640px and down) */
+@media only screen and (max-width: 40em) {
+  .socialBtn > button {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* Small devices such as small phones (368px and down) */
+@media only screen and (max-width: 23em) {
+}

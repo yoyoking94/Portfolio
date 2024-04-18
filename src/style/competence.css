@@ -1,0 +1,126 @@
+.frontEnd,
+.backEnd,
+.other {
+  margin: 10px 0;
+  width: 70vw;
+  display: flex;
+  overflow: hidden;
+}
+
+.frontEnd > span,
+.other > span {
+  display: flex;
+  flex-wrap: nowrap;
+
+  animation-name: slide-then-hide-left;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+
+.backEnd > span {
+  display: flex;
+  flex-wrap: nowrap;
+
+  animation-name: slide-then-hide-right;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+
+.competence img {
+  width: 150px;
+  margin: 0 50px;
+  transition: all 1s ease-in-out;
+}
+
+@keyframes slide-then-hide-left {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    display: none;
+    transform: translate(-100%, 0);
+  }
+}
+
+@keyframes slide-then-hide-right {
+  0% {
+    transform: translate(-100%, 0);
+  }
+
+  100% {
+    display: none;
+    transform: translate(0, 0);
+  }
+}
+
+/* Largest devices such as desktops (1280px and down) */
+@media only screen and (max-width: 80em) {
+  .frontEnd,
+  .backEnd,
+  .other {
+    width: 75vw;
+  }
+
+  .competence img {
+    width: 125px;
+    margin: 0 40px;
+  }
+}
+/* Large devices such as laptops (1024px and down) */
+@media only screen and (max-width: 64em) {
+  .frontEnd,
+  .backEnd,
+  .other {
+    width: 80vw;
+  }
+
+  .competence img {
+    width: 100px;
+    margin: 0 30px;
+  }
+}
+/* Medium devices such as tablets (768px and down) */
+@media only screen and (max-width: 48em) {
+  .frontEnd,
+  .backEnd,
+  .other {
+    width: 85vw;
+  }
+
+  .competence img {
+    width: 75px;
+    margin: 0 20px;
+  }
+}
+/* Small devices such as large phones (640px and down) */
+@media only screen and (max-width: 40em) {
+  .frontEnd,
+  .backEnd,
+  .other {
+    width: 90vw;
+  }
+
+  .competence img {
+    width: 50px;
+    margin: 0 10px;
+  }
+}
+
+/* Small devices such as small phones (368px and down) */
+@media only screen and (max-width: 23em) {
+  .frontEnd,
+  .backEnd,
+  .other {
+    width: 95vw;
+  }
+
+  .competence img {
+    width: 20px;
+    margin: 0 5px;
+  }
+}
