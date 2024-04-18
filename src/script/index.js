@@ -85,7 +85,7 @@ const nav = () => {
 
 /* ============ Project ============ */
 const project = () => {
-    const apiUrl = 'https://api.github.com/users/yoyoking94/repos?sort=created&per_page=10'
+    const apiUrl = 'prout'
     fetch(apiUrl)
         .then(response => {
             if (!response.ok) {
